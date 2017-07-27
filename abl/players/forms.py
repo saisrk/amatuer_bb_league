@@ -10,6 +10,7 @@ class PlayerCreateForm(forms.ModelForm):
             "plastname",
             "pemail",
             "mobilenum",
+            "playernum",
             "teamname",
         ]
 
@@ -18,4 +19,5 @@ class TeamCreateForm(forms.ModelForm):
         model = Team
         fields = [
             "teamname",
+            "tournament",
         ]

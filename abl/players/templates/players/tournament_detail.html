@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ tournament.tname }}</h1>
+<h2>Total number of teams allowed: {{ tournament.maxteams }}</h2>
+<h2>Type: {{ tournament.ttype }}</h2>
+
+{% if teams %}
+<h2>Teams Registered</h2>
+{% for team in teams %}
+    {{ team }}<br>
+{% endfor %}
+{% else %}
+<h2>No Teams registered</h2>
+{% endif %}
+<a href="/abl/">Home</a>
+</body>
+</html>

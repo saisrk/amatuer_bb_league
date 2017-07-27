@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Amatuer Basketball League</h1>
+{% for tournament in tournaments %}
+    <a href="/abl/{{ tournament.id }}">{{ tournament }}</a> <br>
+{% endfor %}
+</body>
+</html>

@@ -18,6 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^$', ),
-    url(r'^player/', include('players.urls')),
+    url(r'^abl/', include('players.urls', namespace='abl')),
 ]
