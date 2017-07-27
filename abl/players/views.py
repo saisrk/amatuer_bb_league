@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 
 from .models import Player, Team, Tournament, PlayerStat, Match
 from .forms import PlayerCreateForm, TeamCreateForm
@@ -19,3 +20,14 @@ def tournament_detail(request, tid):
         "teams": teams_registered,
     }
     return render(request, 'players/tournament_detail.html', context_data)
+
+def add_team(request):
+    if request.method == 'POST':
+        form = TeamCreateForm(request.POST)
+        if form.is_valid():
+            print form.cleaned_data
+            return HttpResponseRedirect('/abl/')
+    else:
+        teamform = TeamCreateForm()
+
+    return render(request, 'players/add_team_form.html', {'form': teamform})
